@@ -19,7 +19,7 @@ trait HybridRelations
      * @param  string $localKey
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function hasOne($related, $foreignKey = null, $localKey = null, $ownerKey = null)
+    public function hasOne($related, $foreignKey = null, $localKey = null)
     {
         // Check if it is a relation with an original model.
         if (!is_subclass_of($related, 'Mpociot\Couchbase\Eloquent\Model')) {
@@ -170,7 +170,7 @@ trait HybridRelations
      * @param  string $id
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function morphTo($name = null, $type = null, $id = null)
+    public function morphTo($name = null, $type = null, $id = null, $ownerKey = null)
     {
         // If no name is provided, we will use the backtrace to get the function name
         // since that is most likely the name of the polymorphic interface. We can
