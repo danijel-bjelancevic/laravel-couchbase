@@ -19,7 +19,7 @@ trait HybridRelations
      * @param  string $localKey
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function hasOne($related, $foreignKey = null, $localKey = null)
+    public function hasOne($related, $foreignKey = null, $localKey = null, $ownerKey = null)
     {
         // Check if it is a relation with an original model.
         if (!is_subclass_of($related, 'Mpociot\Couchbase\Eloquent\Model')) {
