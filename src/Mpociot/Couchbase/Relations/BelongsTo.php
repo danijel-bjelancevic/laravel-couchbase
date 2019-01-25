@@ -31,4 +31,24 @@ class BelongsTo extends \Illuminate\Database\Eloquent\Relations\BelongsTo
 
         $this->query->whereIn($key, $this->getEagerModelKeys($models));
     }
+
+    /**
+     * Get the key for comparing against the parent key in "has" query.
+     *
+     * @return string
+     */
+    public function getHasCompareKey()
+    {
+        return $this->getOwnerKey();
+    }
+
+    /**
+     * Get the key for comparing against the parent key in "has" query.
+     *
+     * @return string
+     */
+    public function getForeignKeyName()
+    {
+        return $this->foreignKey;
+    }
 }
