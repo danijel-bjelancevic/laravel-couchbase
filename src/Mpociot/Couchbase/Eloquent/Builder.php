@@ -322,7 +322,7 @@ class Builder extends EloquentBuilder
         $relatedIds = array_keys($relationCount);
 
         // Add whereIn to the query.
-        return $this->whereIn($relation->getForeignKeyName(), $relatedIds, $boolean, $not);
+        return $this->whereIn($this->model->getKeyName(), $relatedIds, $boolean, $not);
     }
 
     /**
